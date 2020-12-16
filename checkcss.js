@@ -37,11 +37,13 @@ function readFile (dir, filetype) {
                 let cssData = fs.readFileSync(fullPath, 'utf8') // 同步读取
                 let cssKeys = getCssKeys(cssData, filename)
                 let wxmlData = fs.readFileSync(path.join(dir, files[wxmlIdx]), 'utf8')
-                getClassKeys(wxmlData)
+                let wxmlKeys = getClassKeys(wxmlData)
+                console.log(diff(cssKeys, wxmlKeys))
             }
         }
     }
 }
+
 // 获取css属性列表
 function getCssKeys (data) {
     // 去除注释内容
@@ -62,6 +64,8 @@ function getCssKeys (data) {
     keys = [...new Set(keys)] // 去除重复的css样式
     return keys
 }
+
+// 获取wxml中的class
 function getClassKeys (data) {
     // 去除注释内容
     // <!-- <view>xxxx</view> -->
@@ -89,20 +93,50 @@ function getClassKeys (data) {
         }
     }
     classes = [...new Set(classes)]
-    console.log(classes)
     /**
-     * ="xxx"
+     * class="xxx {{yyy && 'aaa'}}" => class="xxx aaa"
      */
-    const reg2 = /{{[\s\S]+&&(('|")[\s\S]+?\2)}}/g
-    classes.forEach(item => {
-        item.replace(reg2, (match, p1) => {
-            return p1
-        })
-    })
-    console.log(classes)
+    const reg2 = /{{[\s\S]+&&\s*('|")([\s\S]+?)\1}}/g
+    classes = classes.map(item => item.replace(reg2, (match, p1, p2) => p2))
+    classes = [...new Set(classes)]
+    /**
+     * class="xxx {{yyy ? 'aaa' : 'bbb'}}" => class="xxx aaa bbb"
+     */
+    const reg3 = /{{[\s\S]+\?\s*('|")([\s\S]+?)\1\s*:\s*\1([\s\S]+?)\1}}/g
+    classes = classes.map(item => item.replace(reg3, (match, p1, p2, p3) => p2 + ' ' + p3))
+    classes = [...new Set(classes)]
+    /**
+     * class="xxx aaa bbb" => "xxx aaa bbb"
+     */
+    const reg4 = /class=('|")([\s\S]+?)\1/g
+    classes = classes.map(item => item.replace(reg4, (match, p1, p2) => p2))
+    classes = [...new Set(classes)]
+    /**
+     * "xxx aaa bbb"
+     * => 多维数组['xxx', 'aaa', 'bbb']
+     * => 扁平化
+     * => 去重
+     */
+    classes = [...new Set(flat(classes.map(item => item.split(' '))))]
+    return classes
 }
 
+/**
+ * 求css相对于wxml的差集
+ * 即css中有的，wxml中没有
+ */
+function diff (css, wxml) {
+    return css.filter(outer => !wxml.some(inner => outer === inner))
+}
 
+/**
+ * 展开一层
+ * 优先使用原生
+ * 其次用拓展运算符替代
+ */
+function flat (array) {
+    return Array.prototype.flat ? array.flat() : [].concat(...array)
+}
 
 
 
