@@ -61,9 +61,10 @@ function getCssKeys (data) {
     // 非贪婪模式 *? 
     const reg = /\/\*[\s\S]*?\*\//g
     data = data.replace(reg, '')
+    const reg1 = /\.([-]?(?:[_a-z]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\[^\n\r\f0-9a-f])(?:[_a-z0-9-]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\[^\n\r\f0-9a-f])*)(?::{1,2}[a-z-]+)?\s*(?=[\.,{])/g
     let keys = []
     let result
-	while ((result = reg4.exec(data)) !== null) {
+	while ((result = reg1.exec(data)) !== null) {
 		if (result && result[1]) {
 			keys.push(result[1])
 		} 
@@ -145,6 +146,9 @@ function flat (array) {
     return Array.prototype.flat ? array.flat() : [].concat(...array)
 }
 
+/**
+ * 格式化日志
+ */
 function formatFile (opts) {
     let {fileName, filePath, uselessCss} = opts
     const file = {
@@ -166,9 +170,6 @@ function writeFile (data) {
         console.log('详见：', `${desktopDir}/useless-css.json`)
     })
 }
-
-
-
 
 function readCssFile (dir, directory) {
     dir = path.join(dir, directory)
