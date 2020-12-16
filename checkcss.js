@@ -1,3 +1,5 @@
+const os = require('os')
+const desktopDir = os.homedir() + '/Desktop'
 const path = require('path')
 const _prefix = '/Users/zhenzhen/project/tcel-main-project/source/page/train/newpassenger/'
 const fs = require('fs')
@@ -38,7 +40,12 @@ function readFile (dir, filetype) {
                 let cssKeys = getCssKeys(cssData, filename)
                 let wxmlData = fs.readFileSync(path.join(dir, files[wxmlIdx]), 'utf8')
                 let wxmlKeys = getClassKeys(wxmlData)
-                console.log(diff(cssKeys, wxmlKeys))
+                const useless = diff(cssKeys, wxmlKeys)
+                formatFile({
+                    fileName: filename,
+                    filePath: fullPath,
+                    uselessCss: useless
+                })
             }
         }
     }
@@ -138,6 +145,27 @@ function flat (array) {
     return Array.prototype.flat ? array.flat() : [].concat(...array)
 }
 
+function formatFile (opts) {
+    let {fileName, filePath, uselessCss} = opts
+    const file = {
+        fileName,
+        filePath,
+        uselessCss
+    }
+    writeFile(JSON.stringify(file, null, 4))
+}
+
+/**
+ * 输出useless-css到桌面
+ */
+function writeFile (data) {
+    fs.writeFile(`${desktopDir}/useless-css.json`, data, (err) => {
+        if (err) {
+            throw err
+        }
+        console.log('详见：', `${desktopDir}/useless-css.json`)
+    })
+}
 
 
 
