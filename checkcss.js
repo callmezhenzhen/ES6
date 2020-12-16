@@ -1,8 +1,9 @@
 const os = require('os')
 const desktopDir = os.homedir() + '/Desktop'
 const path = require('path')
-const _prefix = '/Users/zhenzhen/project/tcel-main-project/source/page/train/newpassenger/'
+const prefix = '/Users/zhenzhen/project/tcel-main-project/source/page/'
 const fs = require('fs')
+const packages = ['train', 'traincommon']
 // https://www.w3.org/TR/CSS2/syndata.html#syntax
 // [-]?({nmstart})({nmchar})*
 // nmstart: [_a-z]|{nonascii}|{escape}
@@ -27,25 +28,30 @@ const reg3 = /\.([-]?(?:[_a-z]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\
 const reg4 = /\.([-]?(?:[_a-z]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\[^\n\r\f0-9a-f])(?:[_a-z0-9-]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\[^\n\r\f0-9a-f])*)(?::{1,2}[a-z-]+)?\s*(?=[\.,{])/g
 
 // 读取css文件
-function readFile (dir, filetype) {
+function readFile (dir, diffs) {
     let files = fs.readdirSync(dir)
     for (let i = 0, len = files.length; i < len; i++) {
         let fullPath = path.join(dir, files[i])
         let stat = fs.statSync(fullPath)
-        if (!stat.isDirectory() && files[i].indexOf(filetype) > -1) {
-            let filename = files[i].substring(0, files[i].length - 5) // 去除拓展名
-            let wxmlIdx = files.findIndex(item => item === filename + '.wxml') // 与之匹配的wxml
-            if (wxmlIdx > -1) {
-                let cssData = fs.readFileSync(fullPath, 'utf8') // 同步读取
-                let cssKeys = getCssKeys(cssData, filename)
-                let wxmlData = fs.readFileSync(path.join(dir, files[wxmlIdx]), 'utf8')
-                let wxmlKeys = getClassKeys(wxmlData)
-                const useless = diff(cssKeys, wxmlKeys)
-                formatFile({
-                    fileName: filename,
-                    filePath: fullPath,
-                    uselessCss: useless
-                })
+        if (stat.isDirectory()) { // 目录，深度遍历
+            readFile(fullPath, diffs)
+        } else {
+            let wxmlIdx
+            if (isWxss(files[i]) && (wxmlIdx = getRelatedWxmlIndex(files, files[i])) > -1) { // .wxss文件并且有匹配的.wxml文件
+                let cssData = fs.readFileSync(fullPath, 'utf8') // 读取.wxss文件
+                let cssKeys = getCssKeys(cssData) // 解析获取样式列表
+                let wxmlData = fs.readFileSync(path.join(dir, files[wxmlIdx]), 'utf8') // 读取.wxml文件
+                let wxmlKeys = getClassKeys(wxmlData) // 解析获取样式列表
+                const useless = diff(cssKeys, wxmlKeys) // 计算差集
+                if (useless && useless.length > 0) {
+                    result.totalAmount += useless.length
+                    diffs.push({
+                        fileName: files[i], // 文件名
+                        filePath: cutPathFrom(fullPath, 'page'), // 文件路径，page开头
+                        uselessCss: useless, // 列表
+                        amount: useless.length // 条数
+                    })
+                }
             }
         }
     }
@@ -138,9 +144,37 @@ function diff (css, wxml) {
 }
 
 /**
+ * 是否是wxss文件
+ * @param {string} fileName 
+ */
+function isWxss (fileName) {
+    return fileName.indexOf('.wxss') > -1
+}
+
+/**
+ * 获取匹配的wxml序列
+ * @param {array} files 
+ * @param {string} fileName 
+ */
+function getRelatedWxmlIndex (files, fileName) {
+    const wxmlName = fileName.replace(/\.wxss/g, '.wxml')
+    return files.findIndex(item => item === wxmlName)
+}
+
+/**
+ * 截取路径，方便读取
+ * @param {string} path 
+ * @param {string} cuter 
+ */
+function cutPathFrom (path, cuter) {
+    return path.substring(path.indexOf(cuter))
+}
+
+/**
  * 展开一层
  * 优先使用原生
  * 其次用拓展运算符替代
+ * @param {array} array 
  */
 function flat (array) {
     return Array.prototype.flat ? array.flat() : [].concat(...array)
@@ -148,19 +182,20 @@ function flat (array) {
 
 /**
  * 格式化日志
+ * @param {<object>} diffs 
+ * @param {number} totalAmount 
  */
-function formatFile (opts) {
-    let {fileName, filePath, uselessCss} = opts
+function formatFile (diffs, totalAmount) {
     const file = {
-        fileName,
-        filePath,
-        uselessCss
+        totalAmount,
+        useless: diffs
     }
     writeFile(JSON.stringify(file, null, 4))
 }
 
 /**
  * 输出useless-css到桌面
+ * @param {<string>} data 
  */
 function writeFile (data) {
     fs.writeFile(`${desktopDir}/useless-css.json`, data, (err) => {
@@ -171,11 +206,22 @@ function writeFile (data) {
     })
 }
 
-function readCssFile (dir, directory) {
-    dir = path.join(dir, directory)
-    readFile(dir, '.wxss')
+const result = { // 统计信息
+    totalAmount: 0
+} 
+
+/**
+ * 执行入口
+ */
+function main () {
+    let diffs = []
+    for (let i = 0, len = packages.length; i < len; i++) {
+        let dir = path.join(prefix, packages[i])
+        readFile(dir, diffs)
+    }
+    formatFile(diffs, result.totalAmount)
 }
 
-readCssFile(_prefix, 'detail')
+main()
 
 
