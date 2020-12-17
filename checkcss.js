@@ -45,6 +45,7 @@ function readFile (dir, diffs) {
                 const useless = diff(cssKeys, wxmlKeys) // 计算差集
                 if (useless && useless.length > 0) {
                     result.totalAmount += useless.length
+                    result.matchFiles++
                     diffs.push({
                         fileName: files[i], // 文件名
                         filePath: cutPathFrom(fullPath, 'page'), // 文件路径，page开头
@@ -185,9 +186,10 @@ function flat (array) {
  * @param {<object>} diffs 
  * @param {number} totalAmount 
  */
-function formatFile (diffs, totalAmount) {
+function formatFile (diffs, result) {
     const file = {
-        totalAmount,
+        matchedFiles: result.matchFiles,
+        totalAmount: result.totalAmount,
         useless: diffs
     }
     writeFile(JSON.stringify(file, null, 4))
@@ -207,6 +209,7 @@ function writeFile (data) {
 }
 
 const result = { // 统计信息
+    matchFiles: 0,
     totalAmount: 0
 } 
 
@@ -219,7 +222,9 @@ function main () {
         let dir = path.join(prefix, packages[i])
         readFile(dir, diffs)
     }
-    formatFile(diffs, result.totalAmount)
+    formatFile(diffs, result)
+    console.log(`本次共命中${result.matchFiles}个.wxss文件`)
+    console.log(`本次检测出${result.totalAmount}个无用css样式`)
 }
 
 main()
