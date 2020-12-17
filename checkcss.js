@@ -117,7 +117,7 @@ function getClassKeys (data) {
     /**
      * class="xxx {{yyy ? 'aaa' : 'bbb'}}" => class="xxx aaa bbb"
      */
-    const reg3 = /{{[\s\S]+\?\s*('|")([\s\S]+?)\1\s*:\s*\1([\s\S]+?)\1}}/g
+    const reg3 = /{{[\s\S]+\?\s*('|")([\s\S]*?)\1\s*:\s*\1([\s\S]*?)\1\s*}}/g
     classes = classes.map(item => item.replace(reg3, (match, p1, p2, p3) => p2 + ' ' + p3))
     classes = [...new Set(classes)]
     /**
