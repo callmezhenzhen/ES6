@@ -1,65 +1,735 @@
-{
-    "tips": `
-        <section class="tips-section" tab-label="购票取票">
-            <div class="tips-box">
-                <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />取票说明</h3>
-                <ul class="tips-list">
-                    <li>2020年6月20日起，全国普速铁路实施电子客票，无需取纸质车票，普速列车高铁动车直接刷二代身份证进出站。</li>
-                    <li>
-                        未开通电子客票的车站依然保持原模式，发车前请携带购票时使用的的有效证件原件，在车站人工窗口或车站自主取票机取票。
-                        <div class="tips-warn">电子客票：使用户口本等无法自动识别的证件购票的乘客、持儿童票的乘客，须持购票时使用的本人或同行人有效证件原件，通过人工通道完成验证、进出站检票手续。</div>
-                    </li>
-                    <li class="tips-text-weak">代售点取票时会收取5元/张取票费。</li>
-                </ul>
-            </div>
 
-            <div class="tips-box">
-                <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/changeTicket.png" />如何换取纸质车票</h3>
-                <table class="tips-table" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <th style="width:30%;">取票类型</th>
-                        <th>如何取票</th>
-                    </tr>
-                    <tr>
-                        <td>二代身份证</td>
-                        <td>
-                            取票条件：二代身份证原件
-                            <br />取票地点：车站售票窗口、车站自动售取票机、代售点
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>护照、台胞证、回乡证</td>
-                        <td>
-                            取票条件：购票证件原件+E开头的取票号
-                            <br />取票地点：车站售票窗口、代售点
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>学生票</td>
-                        <td>
-                            取票条件：购票证件原件+
-                            <span class="color1">学生优惠卡</span>
-                            <br />取票地点：车站售票窗口、车站自动售取票机
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>儿童票</td>
-                        <td>
-                            取票条件：购票时
-                            <span class="color1">同行成人的证件原件</span>
-                            <br />取票地点：车站售票窗口、车站自动售取票机、代售点
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="tips-box">
-                <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/reimburse.png" />如何获取报销凭证</h3>
-                <ul class="tips-list">
-                    <li>电子客票：开车前或乘车之日起30天内凭购票时使用的购票证件原件，至车站售票窗口（含自动售票机）打印电子客票报销凭证。</li>
-                    <li>非电子客票：乘车之日起30天内，凭购票时使用的居民身份证件原件在售票窗口换取纸质车票。逾期不再办理，纸质车票仅用作报销凭证。</li>
-                    <li>改签/变更到站：退票之日起30日内，凭购票使用的有效证件到车站售票窗口索取退票费报销凭证。</li>
-                </ul>
-            </div>
-        </section>
-    `
-}
+<!-- 购票取票 -->
+<section class="tips-section" tab-label="购票取票">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />取票说明</h3>
+        <ul class="tips-list">
+            <li>2020年6月20日起，全国普速铁路实施电子客票，无需取纸质车票，普速列车高铁动车直接刷二代身份证进出站。</li>
+            <li>
+                未开通电子客票的车站依然保持原模式，发车前请携带购票时使用的的有效证件原件，在车站人工窗口或车站自主取票机取票。
+                <div class="tips-warn">电子客票：使用户口本等无法自动识别的证件购票的乘客、持儿童票的乘客，须持购票时使用的本人或同行人有效证件原件，通过人工通道完成验证、进出站检票手续。</div>
+            </li>
+            <li class="tips-text-weak">代售点取票时会收取5元/张取票费。</li>
+        </ul>
+    </div>
+
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/changeTicket.png" />如何换取纸质车票</h3>
+        <table class="tips-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th style="width:30%;">取票类型</th>
+                <th>如何取票</th>
+            </tr>
+            <tr>
+                <td>二代身份证</td>
+                <td>
+                    取票条件：二代身份证原件
+                    <br />取票地点：车站售票窗口、车站自动售取票机、代售点
+                </td>
+            </tr>
+            <tr>
+                <td>护照、台胞证、回乡证</td>
+                <td>
+                    取票条件：购票证件原件+E开头的取票号
+                    <br />取票地点：车站售票窗口、代售点
+                </td>
+            </tr>
+            <tr>
+                <td>学生票</td>
+                <td>
+                    取票条件：购票证件原件+
+                    <span class="color1">学生优惠卡</span>
+                    <br />取票地点：车站售票窗口、车站自动售取票机
+                </td>
+            </tr>
+            <tr>
+                <td>儿童票</td>
+                <td>
+                    取票条件：购票时
+                    <span class="color1">同行成人的证件原件</span>
+                    <br />取票地点：车站售票窗口、车站自动售取票机、代售点
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/reimburse.png" />如何获取报销凭证</h3>
+        <ul class="tips-list">
+            <li>电子客票：开车前或乘车之日起30天内凭购票时使用的购票证件原件，至车站售票窗口（含自动售票机）打印电子客票报销凭证。</li>
+            <li>非电子客票：乘车之日起30天内，凭购票时使用的居民身份证件原件在售票窗口换取纸质车票。逾期不再办理，纸质车票仅用作报销凭证。</li>
+            <li>改签/变更到站：退票之日起30日内，凭购票使用的有效证件到车站售票窗口索取退票费报销凭证。</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 核验说明 -->
+<section class="tips-section" tab-label="核验说明">
+    <div class="tips-nav">
+        <span class="current" @click="changeVerification($event, 0)">手机号核验</span>
+        <span @click="changeVerification($event, 1)">身份核验</span>
+    </div>
+    <div ref="changeVerification0">
+        <div class="tips-box">
+            <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/phone.png" />什么是手机号核验?</h3>
+            <ul class="tips-list">
+                <li>
+                    根据有关部门要求，自2020年2月1日起，购票人须提供每一名乘车旅客本人使用的手机号码，方可购票，以便在需要时及时联系乘车旅客。
+                    <div class="tips-warn">
+                        <div class="t">老人、儿童、港澳台/外籍乘客没有手机号怎么办？</div>
+                        <ul class="tips-warn-list">
+                            <li>未成年人、老年人等重点旅客以及无手机的旅客，可提供监护人或能及时联系的亲友手机号码；</li>
+                            <li>港澳台旅客、外籍旅客可提供电子邮箱。</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tips-box">
+            <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />手机号“待核验”怎么办?</h3>
+            <ul class="tips-list">
+                <li>铁路部门将适时对号码的真实性进行核验，核验不通过的将影响您继续购票。请您在添加常旅及购票过程中，按相关提示填写乘车乘客手机号码，确保信息真实有效。我司将依法保护旅客个人信息安全。</li>
+            </ul>
+        </div>
+    </div>
+    <div ref="changeVerification1" style="display:none">
+        <div class="tips-box">
+            <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/idCard.png" />什么是身份核验?</h3>
+            <ul class="tips-list">
+                <li>为完善铁路实名制购票，自2014年3月1日起，中国铁路客户服务中心网站将对互联网注册用户和常用联系人（乘车人）进行身份信息核验。</li>
+            </ul>
+        </div>
+        <div class="tips-box">
+            <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />身份核验“待核验”、“未通过”怎么办？</h3>
+            <ul class="tips-list">
+                <li>
+                    “待核验”：需持居民身份证原件到车站售票窗口办理核验，核验通过后方可线上购票需持居民身份证原件到车站售票窗口办理核验。
+                    <div class="tips-warn">
+                        <ul class="tips-warn-list">
+                            <li style="margin:0px">账号注册人：办理注册人身份核验时，请持居民身份证原件。</li>
+                            <li>乘车人：办理常用联系人（乘车人）身份信息核验时，请持常用联系人（乘车人）有效身份证件原件及注册人注册时填写的有效身份证件原件。</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>“未通过”：需修改填写的身份信息与居民身份证原件完全一致，等待核验；若保存后状态显示“待核验”，则按照“待核验”到车站售票窗口办理核验。</li>
+            </ul>
+        </div>
+        <div class="tips-box">
+            <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />身份“预通过”怎么办？</h3>
+            <ul class="tips-list">
+                <li>需要完善护照/通行证类证件有效期截止日期、出生日期、国籍信息。</li>
+            </ul>
+        </div>
+        <div class="tips-box">
+            <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />身份“请报验”怎么办？</h3>
+            <ul class="tips-list">
+                <li>需要完善护照/需持护照/通行证类证件原件到车站窗口办理核验。</li>
+            </ul>
+        </div>
+        <div class="tips-box">
+            <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/status.png" />身份核验状态</h3>
+            <table class="tips-table" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th style="width:7em">核验状态</th>
+                    <th>原因</th>
+                    <th style="width:4em;line-height:40px;padding: 20px 20px 20px 24px;">
+                        是否可
+                        <br />线上购票
+                    </th>
+                </tr>
+                <tr>
+                    <td>待核验</td>
+                    <td>身份信息未经铁路系统核验</td>
+                    <td class="text-center">
+                        <span class="color1">否</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>未通过</td>
+                    <td>身份信息经过核验但未通过</td>
+                    <td class="text-center">
+                        <span class="color1">否</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        预通过
+                        <br />(护照/通行证类)
+                    </td>
+                    <td>身份信息已经通过车站售票窗口预核验，但还未经国家身份认证权威部分核验</td>
+                    <td class="text-center">是</td>
+                </tr>
+                <tr>
+                    <td>
+                        请报验
+                        <br />(护照/通行证类)
+                    </td>
+                    <td>身份信息未经核验</td>
+                    <td class="text-center">是</td>
+                </tr>
+                <tr>
+                    <td>已通过</td>
+                    <td>身份信息经铁路系统核验</td>
+                    <td class="text-center">是</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 退票 -->
+<section class="tips-section" tab-label="退票">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/refund.png" />可退票的时间及退票方式</h3>
+        <table class="tips-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th style="width:50%">申请退票距发车时间</th>
+                <th>退票方式</th>
+            </tr>
+            <tr>
+                <td>&gt;30分钟，未取纸质车票</td>
+                <td>火车票订单中退票</td>
+            </tr>
+            <tr>
+                <td>&le;30分钟</td>
+                <td>人工窗口退票</td>
+            </tr>
+            <tr>
+                <td>已过发车时间</td>
+                <td>不可办理退票</td>
+            </tr>
+            <tr>
+                <td>已取纸质车票</td>
+                <td>人工窗口退票</td>
+            </tr>
+            <tr>
+                <td>已在线下办理改签</td>
+                <td>人工窗口退票</td>
+            </tr>
+            <tr>
+                <td>夜间23:25-次日6:00</td>
+                <td>火车票订单中预约退票次日6:00后将自动为您办理退票</td>
+            </tr>
+        </table>
+
+        <div class="tips-other">* 人工窗口退票，请务必于发车前，持携带购票时所使用的乘车人有效身份证件原件到车站售票窗口办理（若已取纸质车票请带好纸质车票）。</div>
+    </div>
+
+    <div class="tips-box" id="refund_fee">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/money.png" />退票手续费标准</h3>
+        <table class="tips-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th style="width:50%">申请退票距发车时间</th>
+                <th>退票手续费</th>
+            </tr>
+            <tr>
+                <td>小于24小时</td>
+                <td>票价20%</td>
+            </tr>
+            <tr>
+                <td>24小时-48小时（不含）</td>
+                <td>票价10%</td>
+            </tr>
+            <tr>
+                <td>48小时-15天</td>
+                <td>票价5%</td>
+            </tr>
+            <tr>
+                <td>15天（不含）及以上</td>
+                <td>无</td>
+            </tr>
+        </table>
+
+        <div class="tips-other">
+            * 手续费不足2元，按2元收取；
+            <br />* 春运期间，改签或变更到站后的车票，乘车日期在2020-01-10至2020-02-18期间的车票，退票时手续费一律按照20%核收；
+            <br />
+            <span class="color1">*以上费用均由铁路局收取。</span>
+        </div>
+    </div>
+
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/time.png" />退款到账时间</h3>
+        <ul class="tips-list">
+            <li>同程艺龙小程序退票，约1-7个工作日内到账；</li>
+            <li>车站窗口退票/改签，约1-15个工作日内到账。</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 改签 -->
+<section class="tips-section" tab-label="改签">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/modify.png" />改签小贴士</h3>
+        <ul class="tips-list">
+            <li>每张车票仅能改签1次。</li>
+            <li>已改签的新车票不可再次改签，仅能退票。</li>
+        </ul>
+    </div>
+
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />可改签的日期及改签方式</h3>
+        <ul class="tips-list part-margin-buttom">
+            <li>开车前48小时（不含）以上，可改签预售期内其他车次。</li>
+            <li>开车前48小时内，只可改签发车日期内有余票的车次，不可改签至发车日期后的车次。</li>
+        </ul>
+        <table class="tips-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th style="width:50%">申请改签距发车时间</th>
+                <th>改签方式</th>
+            </tr>
+            <tr>
+                <td>&gt;30分钟，未取纸质车票</td>
+                <td>火车票订单中改签</td>
+            </tr>
+            <tr>
+                <td>&le;30分钟</td>
+                <td>人工窗口改签</td>
+            </tr>
+            <tr>
+                <td>已取纸质车票</td>
+                <td>人工窗口改签</td>
+            </tr>
+            <tr>
+                <td>已过发车时间</td>
+                <td>需前往票面始发站改签当日24:00前有余票的车次</td>
+            </tr>
+        </table>
+
+        <div class="tips-other">* 变更到站：在原车票开车前48小时以上，且没有换取纸质车票的，可以办理“变更到站”；已经取得纸质车票的，请在车站指定售票窗口办理。对已改签车票、团体票及通票暂不提供“变更到站”服务。</div>
+    </div>
+
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/money.png" />改签票价说明</h3>
+        <table class="tips-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th style="width:30%">改签方式</th>
+                <th style="width:40%">支付方式</th>
+                <th>手续费</th>
+            </tr>
+            <tr>
+                <td>
+                    原票价低于
+                    <br />改签票价
+                </td>
+                <td>支付新车票票款，退回原车票票价</td>
+                <td>无手续费</td>
+            </tr>
+            <tr>
+                <td>
+                    原票价等于
+                    <br />改签票价
+                </td>
+                <td>无需支付</td>
+                <td>无手续费</td>
+            </tr>
+            <tr>
+                <td>
+                    原票价高于
+                    <br />改签票价
+                </td>
+                <td>无需支付，退还差额</td>
+                <td>按退票费标准收取</td>
+            </tr>
+        </table>
+
+        <div class="tips-other">
+            * 差额退票费最低按2元收取，最终退款以铁路部门实退为准；
+            <br />* 改签、变更到站后，如有应退票款，将在1-15个工作日内退还至原支付账户； <br />*同程艺龙小程序退票，约 <span class="color1">1-7个工作日</span>内到账； <br />*同程艺龙小程序退票，约 <span class="color1">1-7个工作日</span>内到账；
+            <br />
+        </div>
+    </div>
+
+    <div class="tips-box" id="gaiqian_chae">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />改签差额手续费标准（退票费标准）</h3>
+        <table class="tips-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th style="width:50%">改签时距发车时间</th>
+                <th>退票手续费标准</th>
+            </tr>
+            <tr>
+                <td>小于24小时</td>
+                <td>票价20%</td>
+            </tr>
+            <tr>
+                <td>24小时-48小时（不含）</td>
+                <td>票价10%</td>
+            </tr>
+            <tr>
+                <td>48小时-15天</td>
+                <td>票价5%</td>
+            </tr>
+            <tr>
+                <td>15天（不含）及以上</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>
+                    距发车15天以内的车票
+                    <br />改签至15天以上
+                </td>
+                <td>票价5%</td>
+            </tr>
+        </table>
+
+        <div class="tips-other">
+            * 开车前48小时～15天期间内，改签至距开车15天以上的其他列车，又在距开车15天前退票的，仍核收5%的退票费。
+            <br />* 改签或变更到站后的车票乘车日期在春运期间的，退票时一律按开车时间前不足24小时标准（票价20%）核收退票费。
+            <br />
+            <span class="color1">* 以上费用均有铁路局收取，同程旅行不收取任何费用</span>
+        </div>
+    </div>
+</section>
+
+<!-- 学生票 -->
+<section class="tips-section" tab-label="学生票">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/student.png" />学生票价说明</h3>
+        <ul class="tips-list">
+            <li>学生票价格为预估优惠价格，具体以铁路局实际出票票面价格为准，如有差价出票后退还。</li>
+            <li>学生票普速旅客列车票价按相应客票和附加票票价的50%计算。</li>
+            <li>持学生票乘车的学生使用普速旅客列车硬卧时，应另收全价硬卧票价，有空调时还应另收半价空调票票价。</li>
+            <li>动车组列车二等座按公布票价的75%计算。</li>
+        </ul>
+    </div>
+
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/note.png" />学生票购票条件</h3>
+        <ul class="tips-list part-margin-buttom">
+            <li>开车前48小时（不含）以上，可改签预售期内其他车次。</li>
+            <li>开车前48小时内，只可改签发车日期内有余票的车次，不可改签至发车日期后的车次。</li>
+        </ul>
+        <table class="tips-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th style="width:40%">学生票购票条件</th>
+                <th>具体说明</th>
+            </tr>
+            <tr>
+                <td>支持学生</td>
+                <td>
+                    持有学生优惠卡的大学生
+                    <br />大学新生(凭 <span class="color1">录取通知书</span>可购票取票)中小学生(请携带 <span class="color1">学生证件</span>至车站售票窗口办理)
+                </td>
+            </tr>
+            <tr>
+                <td>购票时间</td>
+                <td>
+                    暑假6月1日至9月30日
+                    <br />寒假12月1日至3月31日 <br /><span class="color1">因疫情影响学生票暑假购票截止日期至11月30日</span>
+                </td>
+            </tr>
+            <tr>
+                <td>优惠座席</td>
+                <td>
+                    无座、硬座、硬卧、二等座
+                    <br />(其他座席均需购买成人票)
+                </td>
+            </tr>
+            <tr>
+                <td>乘车区间</td>
+                <td>优惠乘车区间内，且优惠区间为家庭至院校（实习地点）之间</td>
+            </tr>
+            <tr>
+                <td>乘车区间</td>
+                <td>
+                    每年四次单程
+                    <br />(当年未使用的次数，不能留至下年使用）
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />退票说明</h3>
+        <ul class="tips-list">
+            <li>
+                学生票自
+                <span class="color1">2020年1月27日起</span>，不收取退票手续费。
+            </li>
+            <li>若已使用学生票次数，退票时将会退还学生票次数，改签不会再次浪费学生票次数，仅使用一次。</li>
+        </ul>
+    </div>
+
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/notice.png" />取票注意事项</h3>
+        <ul class="tips-list">
+            <li>取票时需携带购票证件原件+学生优惠卡，至车站售票窗口、车站自动售票机取票进站。</li>
+            <li>
+                列车出发/到达站在优惠区间之内，且优惠区间为家庭至院校（实习地点）之间，若
+                <span class="color1">不在优惠区间内，则无法取票</span>。
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- 儿童票 -->
+<section class="tips-section" tab-label="儿童票">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/child.png" />儿童票说明</h3>
+        <img src="https://file.40017.cn/trainwechat/product/img/20210104/child-desc.png" style="height:625px" />
+    </div>
+
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/height.png" />身高说明</h3>
+        <ul class="tips-list">
+            <li>请根据儿童实际身高购票，以免造成儿童因身高与所购车票不符而无法进站，耽误行程。</li>
+            <li>身高在1.2m-1.5m的儿童需购买儿童票。</li>
+            <li>身高超过1.5m的儿童，需购买成人票。</li>
+            <li>儿童不能单独乘车，需要至少一位成人陪同。</li>
+            <li>每位成人乘客可携带1名身高1.2米以下的儿童。</li>
+            <li>
+                若身高不足1.2米的儿童，
+                <span class="color1">超过1名时，仅1名儿童免费</span>，其他儿童需购买儿童票。
+            </li>
+            <li>成年人乘客持卧铺车票时，儿童可以与其共用一个卧铺，并按上述规定免费或购票。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/money.png" />支付小贴士</h3>
+        <ul class="tips-list">
+            <li>由于儿童票价格不定，在填写页时暂以成人票价收取，出票后成功后退还差价，可放心支付。</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 电子客票 -->
+<section class="tips-section" tab-label="电子客票">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/descript.png" />电子客票说明</h3>
+        <ul class="tips-list">
+            <li>电子客票，也称“无纸化”车票。旅客购买电子客票后，凭购票证件原件刷证进站乘车，无需取票。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/question.png" />如何检票进站</h3>
+        <ul class="tips-list">
+            <li>
+                <strong>可刷证检票：</strong>二代身份证、港澳居民居住证、台湾居民居住证、外国人永久居留，可凭购票时使用的乘车人有效身份证件原件通过自助闸机完成实名制验证、进出站验票程序：
+                <div class="flex-center" style="margin-top:18px">
+                    <div class="block-warn">居民身份证</div>
+                    <div class="block-warn">港澳居民居住证</div>
+                    <div class="block-warn">台湾居民居住证</div>
+                    <div class="block-warn">外国人永久居留身份证</div>
+                </div>
+            </li>
+            <li><strong>人工通道检票：</strong>学生票、儿童票、护照需从人工通道检票乘车。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/student.png" />学生如何购票乘车</h3>
+        <ul class="tips-list">
+            <li>学生票乘客，乘车前需到车站指定售票窗口办理一次本人居民身份证件与学生优惠卡的核验手续（学生票需每学年乘车前办理一次）。</li>
+            <li>通过核验手续的旅客购票后可凭居民身份证件自助办理实名制验证和进出站检票手续。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/child.png" />儿童如何购票乘车</h3>
+        <ul class="tips-list">
+            <li>持儿童票的旅客须凭购票时使用的本人或同行成年人有效身份证件原件，通过人工通道完成实名制验证、进出站检票手续。</li>
+            <li>铁路部门在各进站口设有针对老人、儿童旅客的优先通道。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />退票改签说明</h3>
+        <ul class="tips-list">
+            <li><strong>未打印报销凭证：</strong>乘车前尚未打印报销凭证，同程订单内或车站窗口，可办理电子客票退票改签。</li>
+            <li><strong>已打印报销凭证：</strong>需到车站窗口办理退票改签。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/money.png" />电子客票如何报销</h3>
+        <ul class="tips-list">
+            <li>需要报销的旅客，可在开车前或乘车日期之日起30日内，凭购票时使用的有效身份证件原件，到车站售票窗口（含自动售取票机）打印电子客票报销凭证。为了方便旅客，大部分车站在出站口设置了自动取票机，用于旅客在出站时顺手取报销凭证。</li>
+            <li>电子客票报销凭证只能办理一次，建议根据需要凭证件打印报销凭证并妥善保管，防止遗失。</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 中转换乘 -->
+<section class="tips-section" tab-label="中转换乘">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/midstation.png" />中转换乘</h3>
+        <ul class="tips-list" style="color:#666;">
+            <li>
+                <h4>建议同时取两程车票</h4>
+                中转换乘，需要在中转站下车后，再乘坐第二程列车，为保您准时上车，您最好一次性将两程车票全部取出。
+            </li>
+            <li>
+                <h4>同车接续 同一辆车换座位</h4>
+                需要您在中转站下车后，再更换同一辆车的第二程座位。
+            </li>
+            <li>
+                <h4>同站换乘，向工作人员询问换乘路线</h4>
+                若中转时间较多，从第一列车下车后，请询问车站服务人员如何去下一列车的站台。
+                <br />
+                <div style="height:16px"></div>
+                若中转时间较长，从第一列车下车后，请询问车站服务人员是否有直达候车厅的中转换乘通道，若没有请先出站再进站检票。
+            </li>
+            <li>
+                <h4>异站换乘，需要预留足够的换乘时间</h4>
+                异站换乘，需要在不通火车站之间换乘，为避免耽误行程请预留足够的换乘时间。
+            </li>
+        </ul>
+    </div>
+
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />没赶上火车、错过火车改怎么办？</h3>
+        <ul class="tips-list">
+            <li>若行程1的列车晚点，导致没赶上行程2的列车，您可以在中转站将行程2的车票改签，可改签到发车日期当天24点前有余票的车次。若余票不足，导致无法改签，可以在车站售票窗口讲明原因申请退票，一般窗口会免退票费（以窗口实际情况为准，同程不承担退票费用）。
+因不可抗力，同程无法为您承担相应损失，还请理解。</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 抢票 -->
+<section class="tips-section" tab-label="抢票">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/grab.png" />抢票为什么需先付款？</h3>
+        <ul class="tips-list">
+            <li>抢票高峰时段票源紧张，排队人数过多，为避免抢票成功后因为无法及时支付，错失车票，请先支付订单。如您担心资金占用问题，可以选择微信免密支付，抢到票再扣款，没抢到票不扣款。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/money.png" />支付后一定能抢到票吗？</h3>
+        <ul class="tips-list">
+            <li>支付后我们将会全力为您抢票，抢票结果受余票变动及购票人数等因素影响，无法保证100%成功出票，请您保持通讯畅通，我们将会通过微信或短信告知您抢票结果。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />支付过期后是否可以重新支付？</h3>
+        <ul class="tips-list">
+            <li>支付过期后，当前订单已失效，不可以重新支付。如需抢票，请重新预订，并在规定时间内及时支付。支付过期后再次提交抢票订单，对您的抢票结果不构成影响，我们将全力为您抢票，抢票结果无法保证，如抢票失败，全额原路退回款项。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/time.png" />预约抢票什么时候开始抢？</h3>
+        <ul class="tips-list">
+            <li>您预约的抢票订单，将在火车票开售后立即帮您抢票，如开售时间未抢票成功，会持续为您抢票。抢票截止时间请见订单详情页面。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/money.png" />抢不到可以取消吗？是否退款？</h3>
+        <ul class="tips-list">
+            <li>正在抢票中的订单可以随时取消。取消后将全额原路退回款项。取消次数不影响抢票，取消后可以再次提交抢票订单。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />失败或过期是否退款？可再次抢票吗？</h3>
+        <ul class="tips-list">
+            <li>抢票失败或者过期后将全额退款给您，全额原路退回款项。如有需要重新提交抢票订单。抢票过期后您可以返回首页重新选择车次提交抢票订单，再次抢票。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/eye.png" />如何查看抢票退款？</h3>
+        <ul class="tips-list">
+            <li>在您退票之后可以前往【我的】-【我的订单】选择您退票的订单，点击【退款进度】查看您的退款进度。</li>
+        </ul>
+    </div>
+</section>
+<section class="tips-section" tab-label="跨站购票">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/cross.png" />跨站购票</h3>
+        <ul class="tips-list">
+            <li>跨站购票是指推荐的车次均经过指定上、下车站，且为最优方案，您根据实际需求按时上、下车即可。</li>
+            <li>【往前/往后多买几站】可按实际需要在指定中途站上、下车，未乘坐区间坐席会一直保留，差额部分不予退款。</li>
+            <li>【上车补票】上车后需找列车员补票，补票区间可能无座且核收手续费，补票价格可能高于全程总价减去已购票价（手续费由铁路部门按相关规定收取）。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/tip.png" />小贴士</h3>
+        <ul class="tips-list">
+            <li>根据《铁路旅客运输规程》最新规定，“为确保列车运行安全和秩序，在客流高峰期的重点列车、重点区段，如果列车没有运输能力，将停止办理越站补票手续，如未按规定补票强行越站乘车，到站后铁路部门将加收已乘区间应补票价50%的票款。” 因此，请认真评估个人损失承受能力再购票，并且上车后尽早找列车员补票。</li>
+        </ul>
+    </div>
+</section>
+<!-- 配送票 -->
+<section class="tips-section" tab-label="配送票">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/calendar.png" />预售期说明</h3>
+        <ul class="tips-list">
+            <li>配送票预售期为28天内，如超过28天，会在预售期开始后第一时间出票。</li>
+            <li>部分特殊车次预售期小于28天，具体请以各车站公布的预售期为准。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />预订、出票及配送说明</h3>
+        <ul class="tips-list">
+            <li>用户提交订单并支付成功后，订单即进入自动出票系统，将不支持在线办理取消、退票、改签等业务。如需办理，则需用户在收到纸质车票后携车票和乘车人证件原件至车站办理退票或改签业务；</li>
+            <li>网上购票，并不能保证100%购票成功；如购票失败，支付款项将预2-5个工作日内退回至原支付账户；</li>
+            <li>预售期内，08:00-19:00支付完成，1小时内回复是否有票；19:00-次日08:00支付完成，最晚次日9:00前回复；预售期外的订单，预售期当天18:00前回复；</li>
+            <li>因铁路政策，暂不支持自取票在线选座，故使用在线选座功能必须选择快递送票服务，敬请谅解；</li>
+            <li>若您不方便收取快递，可至同程在火车站设立的代收点直接取纸质票，专人出票，无需排队！</li>
+            <li>选择配送票，将有专人为您办理出/取/送票；出票成功后，预计2-3个工作日内送达；偏远地区，极限天气或其它不可控因素除外；</li>
+            <li>所有乡镇及偏远地区暂不支持配送，请尽量选择市、区、县内地址。如所填地址快递公司无法送达，快递公司将有权联系用户至指定地点接收快递或将快递转其它能送达的快递；且如产生费用，由用户自行承担；</li>
+            <li>请务必准确填写配送地址，标注详细的街道号和门牌号，如因用户自己提交了错误地址导致无法送达，责任须用户自行承担；</li>
+            <li>请务必准确填写配送地址，标注详细的街道号和门牌号，如因用户自己提交了错误地址导致无法送达，责任须用户自行承担；</li>
+            <li>提交的多笔订单，如邮寄相关信息相同，系统一般会默认合并邮寄，邮寄后系统会自动退回其它订单快递费用；但并不保证一定能全部合并邮寄处理，如未合并处理，将不会退回快递费用；</li>
+            <li>由于在未出票前铁路给到的卧铺上、中、下价格随机，如出票后支付价格高于实际票面价格，系统会自动退还差价至原支付账户；</li>
+            <li>选择配送票，铁路将收取5元/张票的代售服务费，费用为铁路公司收取；</li>
+            <li>配送包括纸质火车票、代售服务费发票、保险发票（如已购保险），保险发票仅作保险凭证。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/right.png" />免责声明条款</h3>
+        <ul class="tips-list">
+            <li>因不可抗力造成延误派送、无法派送的情况，我司不承担损失；</li>
+            <li>因用户收件信息填写错误、地址无人签收、电话无人接听、收件人拒收等原因造成车票未能及时送达的，用户需自行承担相关损失费用；</li>
+            <li>如因用户提供/选择的订单信息有误（包括但不限于：姓名、证件号、日期、车次、座位类型等）导致所出的车票与用户需购买的车票有别，用户需自行承担相关损失费用；</li>
+            <li>如因用户自身原因导致车票丢失或毁损需重新补票购票，用户需自行承担相关损失费用；</li>
+            <li>基于车票可能获得的收益、利润、实际用途、商业机会、商业价值等任何直接、间接损失，用户需自行承担；</li>
+            <li>自用户预订车票快递服务起满一年内未提出异议的，如后续产生损失，我司不再承担；</li>
+            <li>因铁路实名制规定，我司只为能够提供有效身份证件信息的购票人购买车票，且我司有权对购票人进行身份核实，方法包括但不限于要求购票人提供身份证复印件。购票人身份核实通过后，方可完成购票及退票、退款等后续流程，否则我方将不提供售后服务。若违规情节严重，触犯铁路机关相关规定或国家相关法律法规，我司将主动配合公安机关进行查处。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />退/改签说明</h3>
+        <ul class="tips-list">
+            <li>退票或改签：订单提交支付成功后，如需退票或改签，需用户在收到纸质车票后携车票和乘车人证件原件至车站办理，退款金额将于车站窗口当面退还。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />退/改签费用说明</h3>
+        <ul class="tips-list">
+            <li>距离发车时间15天（不含）以上退票的，不收取退票费。</li>
+            <li>距离发车时间15天（含）以内、48小时以上，按票价5%计；48小时（含）以内、24小时以上，按票价10%计；不足24小时（含）的，按票价20%计。</li>
+            <li>根据铁路局2015年6月10日新规，距离发车时间15天以内，改签车票至15天以上 的，按票价收取5%退票费。</li>
+            <li>改签或变更到站后的车票乘车日期在春运期间的，退票时一律按开车时间前不足24小时标准核收退票费，具体春运期间视当年实际规定。</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 跨境 -->
+<section class="tips-section" tab-label="跨境">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/crossBorder.png" />跨境乘车规则</h3>
+        <ul class="tips-list">
+            <li>旅客必须持有效车票并按票面载明的日期、车次、席别乘车，同时需携带有效的出入境证件及签注。</li>
+            <li>更多跨境车票注意事项详见《广深港高速铁路跨境旅客运输组织规则》。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/refund.png" />跨境车票退票规则</h3>
+        <ul class="tips-list">
+            <li>到站为香港西九龙站的车票，办理退票应不晚于票面指定的日期、车次开车前30分钟；发站为香港西九龙站的车票应不晚于60分钟。</li>
+            <li>退票费核收标准：在票面开车时间前48小时内办理退票的，按票面票价的50%计算；在票面开车时间前48小时至第14天的，按票面票价的30%计算；在票面开车时间前15天及以上的，按票面票价的5%计算。退票费按元计算，不足一元的部分舍去免收。</li>
+        </ul>
+    </div>
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/modify.png" />跨境车票改签规则</h3>
+        <ul class="tips-list">
+            <li>到站为香港西九龙站的车票，办理改签应不晚于票面指定的日期、车次开车前30分钟；发站为香港西九龙站的车票应不晚于60分钟。</li>
+            <li>改签后的车票不得退票。</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 声明 -->
+<section class="tips-section" tab-label="声明">
+    <div class="tips-box">
+        <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/right.png" />声明</h3>
+        <ul class="tips-list">
+            <li>付款成功后会尽快为您出票，但无法保证100%出票成功，若出票不成功款项将在2-7个工作日内原路退回。</li>
+            <li>如因您提供的信息有误或者因您自身原因导致无法取票、车票丢失、车票损毁等情况所导致的损失，需由您自行承担。</li>
+            <li>参与平台活动的用户，严禁任何形式的刷奖、作弊行为，一经发现并核实，我司有权取消相应奖励，并保留追究相关法律责任的权利。</li>
+        </ul>
+    </div>
+</section>

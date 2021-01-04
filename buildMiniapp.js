@@ -5,6 +5,8 @@ const _previewQRImgDir = path.resolve(_sourceCodeDir, '../qr.png')
 const {exec, spawn } = require('child_process')
 if (process.argv[2] == 'build') {
     build()
+} else if (process.argv[2] == 'preview') {
+    previewQR()
 } else {
     showQR()
 }
