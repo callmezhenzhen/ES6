@@ -1,0 +1,65 @@
+{
+    "tips": `
+        <section class="tips-section" tab-label="购票取票">
+            <div class="tips-box">
+                <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/info.png" />取票说明</h3>
+                <ul class="tips-list">
+                    <li>2020年6月20日起，全国普速铁路实施电子客票，无需取纸质车票，普速列车高铁动车直接刷二代身份证进出站。</li>
+                    <li>
+                        未开通电子客票的车站依然保持原模式，发车前请携带购票时使用的的有效证件原件，在车站人工窗口或车站自主取票机取票。
+                        <div class="tips-warn">电子客票：使用户口本等无法自动识别的证件购票的乘客、持儿童票的乘客，须持购票时使用的本人或同行人有效证件原件，通过人工通道完成验证、进出站检票手续。</div>
+                    </li>
+                    <li class="tips-text-weak">代售点取票时会收取5元/张取票费。</li>
+                </ul>
+            </div>
+
+            <div class="tips-box">
+                <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/changeTicket.png" />如何换取纸质车票</h3>
+                <table class="tips-table" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th style="width:30%;">取票类型</th>
+                        <th>如何取票</th>
+                    </tr>
+                    <tr>
+                        <td>二代身份证</td>
+                        <td>
+                            取票条件：二代身份证原件
+                            <br />取票地点：车站售票窗口、车站自动售取票机、代售点
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>护照、台胞证、回乡证</td>
+                        <td>
+                            取票条件：购票证件原件+E开头的取票号
+                            <br />取票地点：车站售票窗口、代售点
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>学生票</td>
+                        <td>
+                            取票条件：购票证件原件+
+                            <span class="color1">学生优惠卡</span>
+                            <br />取票地点：车站售票窗口、车站自动售取票机
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>儿童票</td>
+                        <td>
+                            取票条件：购票时
+                            <span class="color1">同行成人的证件原件</span>
+                            <br />取票地点：车站售票窗口、车站自动售取票机、代售点
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tips-box">
+                <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/reimburse.png" />如何获取报销凭证</h3>
+                <ul class="tips-list">
+                    <li>电子客票：开车前或乘车之日起30天内凭购票时使用的购票证件原件，至车站售票窗口（含自动售票机）打印电子客票报销凭证。</li>
+                    <li>非电子客票：乘车之日起30天内，凭购票时使用的居民身份证件原件在售票窗口换取纸质车票。逾期不再办理，纸质车票仅用作报销凭证。</li>
+                    <li>改签/变更到站：退票之日起30日内，凭购票使用的有效证件到车站售票窗口索取退票费报销凭证。</li>
+                </ul>
+            </div>
+        </section>
+    `
+}
