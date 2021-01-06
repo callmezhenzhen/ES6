@@ -172,6 +172,128 @@ console.log(proxy.age)
 console.log(proxy.name)
 // proxy + reflect end
 
+// self flat start
+const newArray = []
+const flat = (array) => {
+    array.forEach(item => {
+        if (Array.isArray(item)) {
+            flat(item)
+        } else {
+            newArray.push(item)
+        }
+    })
+}
+flat([1, [1, 2, [3, 4, 5], 7], [8, 9, 0], 10, 11])
+console.log(newArray)
+
+
+const flat1 = (array) => {
+    while (array.some(item => Array.isArray(item))) {
+        array = [].concat(...array)
+    }
+    return array
+}
+flat1([1, [1, 2, [3, 4, 5], 7], [8, 9, 0], 10, 11])
+
+
+const flat2 = (array) => {
+    return array.reduce((acc, cur) => Array.isArray(cur) ? [...acc, ...flat2(cur)] : [...acc, cur], [])
+}
+flat2([1, [1, 2, [3, 4, 5], 7], [8, 9, 0], 10, 11])
+// self flat end
+
+// bfs dfs start
+const obj = {
+    a: 1,
+    b: {
+        c: {
+            e: 3,
+            f: {
+                g: {
+                    i: 5,
+                    j: {
+                        k: {
+                            m: 6,
+                            n: 7
+                        }
+                    }
+                },
+                h: 4
+            }
+        },
+        d: 2
+    }
+}
+// 递归
+const dfs = (target) => {
+    if (Array.isArray(target)) {
+        for (let key of target) {
+            dfs(target[key])
+        }
+    } else if (typeof target == 'object') {
+        for (let key in target) {
+            dfs(target[key])
+        }
+    } else {
+        console.log(target)
+    }
+}
+dfs(obj)
+
+
+const list = [
+    {
+        id: '1',
+        child: [
+            {
+                id: '1-1',
+                child: [
+                    {
+                        id: '1-1-1',
+                        child: null
+                    }, 
+                    {
+                        id: '1-1-2',
+                        child: [
+                            {
+                                id: '1-1-2-1',
+                                child: null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: '1-2',
+                child: [
+                    {
+                        id: '1-2-1',
+                        child: [
+                            {
+                                id: '1-2-1-1',
+                                child: null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 2,
+        child: {
+            id: '2-1',
+            child: [
+                {
+                    id: '2-1-1',
+                    child: null
+                }
+            ]
+        }
+    }
+]
+
+// bfs dfs end
 
 
 

@@ -65,10 +65,10 @@
 <!-- 核验说明 -->
 <section class="tips-section" tab-label="核验说明">
     <div class="tips-nav">
-        <span class="current" @click="changeVerification($event, 0)">手机号核验</span>
-        <span @click="changeVerification($event, 1)">身份核验</span>
+        <span class="current" data-event-name="changeVerification" data-index="0">手机号核验</span>
+        <span data-event-name="changeVerification" data-index="1">身份核验</span>
     </div>
-    <div ref="changeVerification0">
+    <div id="changeVerification0">
         <div class="tips-box">
             <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/phone.png" />什么是手机号核验?</h3>
             <ul class="tips-list">
@@ -92,7 +92,7 @@
             </ul>
         </div>
     </div>
-    <div ref="changeVerification1" style="display:none">
+    <div id="changeVerification1" style="display:none">
         <div class="tips-box">
             <h3><img class="title-icon" src="https://file.40017.cn/trainwechat/product/img/20210104/idCard.png" />什么是身份核验?</h3>
             <ul class="tips-list">
