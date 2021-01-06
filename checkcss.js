@@ -7,7 +7,7 @@ const packages = ['train', 'traincommon']
 // https://www.w3.org/TR/CSS2/syndata.html#syntax
 // [-]?({nmstart})({nmchar})*
 // nmstart: [_a-z]|{nonascii}|{escape}
-// nmchar: [_a-z0-9-]|{nonascii}|{escape}
+// nmchar: [_a-z0-9-]|{nonascii}|{escape} ===> 不排除不规范的css命名，比如中间出现大写字母 [_a-z0-9-] => [_a-zA-Z0-9-]
 // nonascii: [^\0-\237]
 // escape: {unicode}|\\[^\n\r\f0-9a-f]
 // unicode: \\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?
@@ -68,7 +68,7 @@ function getCssKeys (data) {
     // 非贪婪模式 *? 
     const reg = /\/\*[\s\S]*?\*\//g
     data = data.replace(reg, '')
-    const reg1 = /\.([-]?(?:[_a-z]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\[^\n\r\f0-9a-f])(?:[_a-z0-9-]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\[^\n\r\f0-9a-f])*)(?::{1,2}[a-z-]+)?\s*(?=[\.,{])/g
+    const reg1 = /\.([-]?(?:[_a-z]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\[^\n\r\f0-9a-f])(?:[_a-zA-Z0-9-]|[^\0-\237]|\\[0-9a-f]{1,6}(?:\r\n|[\n\r\t\f])?|\\[^\n\r\f0-9a-f])*)(?::{1,2}[a-z-]+)?\s*(?=[\.,{])/g
     let keys = []
     let result
 	while ((result = reg1.exec(data)) !== null) {
