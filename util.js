@@ -294,7 +294,25 @@ const list = [
 ]
 
 // bfs dfs end
+// dub start
 
+function dub (fn, delay) {
+    let timer = null
+    return function () {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(function () {
+            console.log('arguments', arguments)
+            fn.call(this, arguments)
+        }, delay)
+    }
+}
+function scroll () {
+    console.log(11111)
+}
+const fn = dub(scroll, 300)
+window.addEventListener('scroll', fn, false)
+
+// dub end
 
 
 
