@@ -314,6 +314,113 @@ window.addEventListener('scroll', fn, false)
 
 // dub end
 
+// extends start 原型链继承
+function SuperType () {
+    this.list = [1, 2]
+}
+function SubType () {
+
+}
+SubType.prototype = new SuperType()
+let s1 = new SubType()
+let s2 = new SubType()
+s2.list.push(3)
+console.log(s1.list)
+console.log(s1 instanceof SubType, s1 instanceof SuperType)
+// extends end 原型链继承
+
+// extends start 借用构造函数
+function SuperType (type) {
+    this.type = type
+    this.list = [1, 2]
+}
+function SubType () {
+    SuperType.call(this, 'sub')
+}
+let s1 = new SubType()
+let s2 = new SubType()
+s2.list.push(3)
+console.log(s1.list)
+console.log(s1 instanceof SubType, s1 instanceof SuperType)
+// extends end 借用构造函数
+
+// extends start 组合继承
+function SuperType (type) {
+    this.type = type
+    this.list = [1, 2] // 私有属性
+}
+SuperType.prototype.commonFun = function () {  } // 公有方法
+function SubType () {
+    SuperType.call(this, 'sub') // 借用构造函数
+}
+SubType.prototype = new SuperType() // 原型链继承公有方法
+SubType.prototype.constructor = SubType // 纠正原型的构造函数
+let s1 = new SubType() // 借用构造函数继承私有属性
+let s2 = new SubType()
+s2.list.push(3)
+console.log(s1.list)
+console.log(s1 instanceof SubType, s1 instanceof SuperType)
+// extends end 组合继承
+
+// extends start 原型式继承
+function createObject (obj) {
+    function F () {}
+    F.prototype = obj
+    return new F()
+}
+let obj = { color: 'red', list: [1, 2] }
+let o1 = createObject(obj)
+let o2 = createObject(obj)
+o2.list.push(3)
+console.log(o1.list)
+console.log(obj.isPrototypeOf(o1))
+// extends end 原型式继承
+
+// extends start 寄生继承
+function createObject (obj) {
+    function F () {}
+    F.prototype = obj
+    return new F()
+}
+function paras(obj) {
+    let clone = createObject(obj)
+    clone.addFun = function () {} // 添加方法
+    return clone
+}
+let obj = { color: 'red', list: [1, 2] }
+let o1 = paras(obj)
+let o2 = paras(obj)
+o2.list.push(3)
+console.log(o1.list)
+console.log(obj.isPrototypeOf(o1))
+// extends end 寄生继承
+
+// extends start 寄生组合继承
+function createObject (obj) {
+    function F () {}
+    F.prototype = obj
+    return new F()
+}
+function inheritPrototype (SubType, SuperType) {
+    let obj = createObject(SuperType.prototype) // obj为SuperType的实例，原型链继承
+    obj.constructor = SubType // 修改obj constructor 为 SubType
+    SubType.prototype = obj
+}
+function SuperType (color) {
+    this.color = color
+    this.list = [1, 2]
+}
+function SubType () {
+    SuperType.call(this, 'red')
+}
+inheritPrototype(SubType, SuperType) // 实现继承
+let s1 = new SubType() // 借用构造函数继承私有属性
+let s2 = new SubType()
+s2.list.push(3)
+console.log(s1.list)
+console.log(s1 instanceof SubType, s1 instanceof SuperType)
+
+
 
 
 
