@@ -1,7 +1,7 @@
 const path = require('path')
 const _sourceCodeDir = path.resolve('/Users/zhenzhen/project/tcel-main-project/source/')
 const _buildCodeDir = path.resolve(_sourceCodeDir, '../build')
-const _previewQRImgDir = path.resolve(_sourceCodeDir, '../qr.png')
+const _previewQRImgDir = path.resolve(_sourceCodeDir, '../qr.jpeg')
 const {exec, spawn } = require('child_process')
 if (process.argv[2] == 'build') {
     build()
